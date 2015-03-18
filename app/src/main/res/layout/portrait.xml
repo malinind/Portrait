@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp" tools:context=".MainActivity"
+    android:background="@color/background_color"
+    android:clickable="false"
+    android:id="@+id/main_layout">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView"
+        android:src="@drawable/face"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:scaleType="fitXY"
+/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/nameOfPart"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:textIsSelectable="false"
+        android:textStyle="bold|italic"
+        android:textColor="@color/textColor" />
+
+    <FrameLayout
+        android:layout_width="@dimen/mouthWidth"
+        android:layout_height="@dimen/mouthHeight"
+        android:onClick="onMouthClick"
+        android:nestedScrollingEnabled="false"
+        android:id="@+id/mouth"
+        android:layout_below="@+id/nose"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"></FrameLayout>
+
+    <FrameLayout
+        android:layout_width="@dimen/foreHeadWidth"
+        android:layout_height="@dimen/foreHeadHeight"
+        android:id="@+id/foreHead"
+        android:onClick="onForeHeadClick"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:visibility="invisible"></FrameLayout>
+
+    <FrameLayout
+        android:layout_width="@dimen/eyeWidth"
+        android:layout_height="@dimen/eyesHeight"
+        android:id="@+id/eyeLeft"
+        android:onClick="onLeftEyeClick"
+        android:layout_below="@+id/foreHead"
+        android:layout_marginLeft="440dp"
+        android:visibility="invisible"></FrameLayout>
+
+    <FrameLayout
+        android:layout_width="@dimen/eyeWidth"
+        android:layout_height="@dimen/eyesHeight"
+        android:id="@+id/eyeRight"
+        android:onClick="onRightEyeClick"
+        android:layout_below="@+id/foreHead"
+        android:layout_toRightOf="@+id/nose"
+        android:layout_toEndOf="@+id/nose"
+        android:visibility="invisible"></FrameLayout>
+
+    <FrameLayout
+        android:layout_width="@dimen/noseWidth"
+        android:layout_height="@dimen/noseHeight"
+        android:id="@+id/nose"
+        android:onClick="onNoseClick"
+        android:layout_below="@+id/foreHead"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="590dp"
+        android:visibility="invisible"></FrameLayout>
+
+    <ImageView
+        android:layout_width="@dimen/catWidth"
+        android:layout_height="@dimen/catHeight"
+        android:id="@+id/cat"
+        android:src="@drawable/cat_head"
+        android:scaleType="fitCenter"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="-50dp"
+        android:clickable="true"
+        android:onClick="clickStart" />
+
+</RelativeLayout>
